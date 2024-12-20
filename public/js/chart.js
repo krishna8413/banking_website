@@ -86,7 +86,7 @@ console.log(window.location.href);
 
 async function fetchData() {
   try {
-    const response = await fetch("https://onlinebankingwebsite.onrender.com/graph");
+    const response = await fetch("http://localhost:5550/graph");
     if (!response.ok) {
       // check if response went through
       throw new Error("HTTP error " + response.status);

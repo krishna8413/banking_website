@@ -3,6 +3,7 @@ const server = express();
 // const hbs = require('hbs');
 // const ejs = require('ejs');
 require('./dbcon/databaseConnection');
+const cors=require('cors');
 // const userData = require("../src/modals/userdata");
 const routes = require('./routes/main');
 const passport=require('passport')
@@ -13,6 +14,7 @@ const path = require('path');
 const port= process.env.PORT;
 const passportInitialization=require('../src/controller/loginAuth');
 passportInitialization.initialize(passport);
+server.use(cors());
 server.use(express.json());
 server.use(express.urlencoded({extended:false}));
 server.use(flash());
